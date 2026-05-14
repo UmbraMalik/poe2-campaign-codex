@@ -565,9 +565,9 @@ h3 {
 }
 
 .download-card {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
   align-items: center;
-  justify-content: space-between;
   gap: 28px;
   padding: 28px;
   border-color: var(--gold-border);
@@ -576,9 +576,30 @@ h3 {
     linear-gradient(180deg, rgba(42, 35, 26, 0.86), rgba(11, 14, 18, 0.92));
 }
 
+.download-copy {
+  display: grid;
+  gap: 10px;
+}
+
 .download-card p {
   color: var(--muted);
-  max-width: 720px;
+  max-width: 760px;
+}
+
+.download-note {
+  margin-top: 4px;
+  font-size: 0.95rem;
+}
+
+.download-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.download-actions .button {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
 }
 
 .steps {
@@ -926,5 +947,16 @@ h3 {
 
   .steps article h3 {
     font-size: 1.45rem;
+  }
+}
+
+
+@media (max-width: 760px) {
+  .download-card {
+    grid-template-columns: 1fr;
+  }
+
+  .download-actions {
+    width: 100%;
   }
 }
