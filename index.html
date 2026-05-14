@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>POE2 Campaign Codex Overlay — русский оверлей для актов</title>
+  <meta name="description" content="Русский оверлей для Path of Exile 2: маршрут актов, бонусы кампании, таймер забега, подсказки по зонам и напоминания по уровням." />
+  <meta property="og:title" content="POE2 Campaign Codex Overlay" />
+  <meta property="og:description" content="Русский оверлей для быстрого прохождения актов Path of Exile 2." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0b0f14" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="POE2 Campaign Codex Overlay">
+      <span class="brand-mark">C</span>
+      <span>
+        <strong>POE2 Campaign Codex</strong>
+        <small>Overlay · RU beta</small>
+      </span>
+    </a>
+
+    <nav class="top-nav" aria-label="Навигация">
+      <a href="#features">Что умеет</a>
+      <a href="#screens">Скрины</a>
+      <a href="#install">Установка</a>
+      <a href="#support">Поддержать</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section">
+      <div class="hero-copy">
+        <div class="eyebrow">
+          <span class="dot"></span>
+          beta · русский клиент · работает по логам игры
+        </div>
+        <h1>Оверлей для быстрого прохождения актов Path of Exile 2</h1>
+        <p class="lead">
+          POE2 Campaign Codex Overlay показывает текущую зону, маршрут, важные бонусы кампании,
+          напоминания по уровням, спидран-подсказки и таймер забега — без инжекта в клиент игры.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button primary" href="#download">Скачать beta</a>
+          <a class="button secondary" href="#install">Как установить</a>
+          <a class="button ghost" href="#support">Поддержать</a>
+        </div>
+
+        <div class="trust-row" aria-label="Ключевые особенности">
+          <span>Без чтения памяти</span>
+          <span>Без инжекта</span>
+          <span>LatestClient.txt</span>
+          <span>Windows</span>
+        </div>
+      </div>
+
+      <div class="hero-panel" aria-label="Реальный скриншот оверлея">
+        <figure class="hero-shot-card">
+          <img src="./assets/screens/overlay-real-reference.png" alt="Реальный скриншот POE2 Campaign Codex Overlay в игре" loading="eager" />
+        </figure>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="section-head">
+        <p class="eyebrow">зачем оно нужно</p>
+        <h2>Чтобы не держать всю кампанию в голове</h2>
+        <p>
+          Вся рутина актов собирается в один боевой HUD: что делать в зоне, что забрать,
+          что скипнуть, когда обновить фласки и какие постоянные бонусы ещё не отмечены.
+        </p>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card">
+          <span class="icon">⌖</span>
+          <h3>Текущая зона по логам</h3>
+          <p>Оверлей читает <code>LatestClient.txt</code> и обновляет текущую локацию без вмешательства в клиент игры.</p>
+        </article>
+        <article class="feature-card">
+          <span class="icon">☑</span>
+          <h3>Чеклист маршрута</h3>
+          <p>Основные действия по зоне: боссы, переходы, квестовые предметы, что сделать сейчас и куда идти дальше.</p>
+        </article>
+        <article class="feature-card">
+          <span class="icon">✦</span>
+          <h3>Бонусы актов</h3>
+          <p>Отдельная вкладка с постоянными наградами: пассивки оружия, резисты, дух, здоровье, мана и выборные бонусы.</p>
+        </article>
+        <article class="feature-card">
+          <span class="icon">⏱</span>
+          <h3>Таймер забега</h3>
+          <p>Общее время, таймер текущего акта, сплиты и режим “только таймер” для опытных игроков.</p>
+        </article>
+        <article class="feature-card">
+          <span class="icon">⇡</span>
+          <h3>Напоминания по уровням</h3>
+          <p>Фласки, базы оружия/брони, power spikes и ближайшие важные уровни без лишней простыни.</p>
+        </article>
+        <article class="feature-card">
+          <span class="icon">⚡</span>
+          <h3>Спидран-подсказки</h3>
+          <p>Чекпоинт-трюки, городские планы, “если по пути”, навигация и скипы долгих анимаций.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="screens" class="section">
+      <div class="section-head">
+        <p class="eyebrow">как выглядит</p>
+        <h2>Скриншоты приложения</h2>
+        <p>Реальный вид оверлея и дополнительных окон приложения в текущей beta-версии.</p>
+      </div>
+
+      <div class="screens-showcase">
+        <div class="screen-switcher" role="tablist" aria-label="Переключение скриншотов приложения">
+          <button
+            class="screen-tab is-active"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            data-screen-image="./assets/screens/overlay-real-reference.png"
+            data-screen-alt="Основной overlay: текущая зона, чеклист, спидран-подсказки и ближайший прогресс"
+            data-screen-title="Основной overlay"
+            data-screen-text="Текущая зона, чеклист, следующий переход, спидран-подсказки и важные напоминания прямо поверх игры."
+          >
+            Основной overlay
+          </button>
+          <button
+            class="screen-tab"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            data-screen-image="./assets/screens/companion-panel-reference.png"
+            data-screen-alt="Подробная панель: маршрут, бонусы, таймер, напоминания и итоги забега"
+            data-screen-title="Подробная панель"
+            data-screen-text="Отдельное окно с маршрутом, бонусами, таймером, напоминаниями и итогами забега — когда нужен весь контекст сразу."
+          >
+            Подробная панель
+          </button>
+          <button
+            class="screen-tab"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            data-screen-image="./assets/screens/timer-mode-reference.png"
+            data-screen-alt="Режим только таймер: компактный вид с таймером, уровнем и следующим переходом"
+            data-screen-title="Режим “только таймер”"
+            data-screen-text="Компактный режим для тех, кто хочет держать на экране только таймер, уровень и ближайший переход без перегруза деталями."
+          >
+            Только таймер
+          </button>
+        </div>
+
+        <figure class="screen-stage">
+          <div class="screen-stage-media">
+            <img
+              id="screen-preview-image"
+              class="screen-preview-image"
+              src="./assets/screens/overlay-real-reference.png"
+              alt="Основной overlay: текущая зона, чеклист, спидран-подсказки и ближайший прогресс"
+              loading="lazy"
+            />
+          </div>
+          <figcaption class="screen-stage-caption">
+            <h3 id="screen-preview-title">Основной overlay</h3>
+            <p id="screen-preview-text">Текущая зона, чеклист, следующий переход, спидран-подсказки и важные напоминания прямо поверх игры.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="download" class="section download-section">
+      <div class="download-card">
+        <div>
+          <p class="eyebrow">beta build</p>
+          <h2>Скачать POE2 Campaign Codex Overlay</h2>
+          <p>
+            Кнопка пока ведёт на заглушку. Когда будет релизный архив, замени ссылку в <code>index.html</code>
+            на GitHub Releases, Google Drive, Яндекс Диск или Telegram-пост.
+          </p>
+        </div>
+        <a class="button primary large" href="#" aria-disabled="true">Скачать beta скоро</a>
+      </div>
+    </section>
+
+    <section id="install" class="section">
+      <div class="section-head">
+        <p class="eyebrow">установка</p>
+        <h2>Запуск за пару минут</h2>
+      </div>
+
+      <div class="steps">
+        <article>
+          <span>01</span>
+          <h3>Скачай архив</h3>
+          <p>Скачай beta-сборку и распакуй папку в любое удобное место.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Запусти exe</h3>
+          <p>Открой <code>PoE2 Campaign Codex Overlay.exe</code>. Windows может показать SmartScreen.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Выбери лог-файл</h3>
+          <p>В настройках укажи лог-файл <code>Path of Exile 2/logs/LatestClient.txt</code>.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Играй</h3>
+          <p>Оверлей начнёт обновляться по логам: зоны, уровни, бонусы и подсказки.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section safety">
+      <div class="safety-card">
+        <div>
+          <p class="eyebrow">важно</p>
+          <h2>Неофициальный фанатский инструмент</h2>
+          <p>
+            Приложение не связано с Grinding Gear Games, не использует память игры, не инжектится в клиент
+            и не нажимает кнопки за игрока. Оно читает обычный лог-файл клиента и показывает подсказки поверх экрана.
+          </p>
+        </div>
+
+        <ul class="safety-list">
+          <li>Работает под русский клиент</li>
+          <li>Beta-версия, возможны баги</li>
+          <li>SmartScreen может предупреждать из-за отсутствия цифровой подписи</li>
+          <li>Фидбек по зонам, бонусам и логам приветствуется</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="support" class="section support">
+      <div class="section-head">
+        <p class="eyebrow">поддержка</p>
+        <h2>Если оверлей помог — можно поддержать</h2>
+        <p>
+          Доступ к beta не планируется закрывать за донатом. Поддержка — это просто “спасибо”
+          за время, нервы, правки под русский клиент и вечную борьбу с Electron.
+        </p>
+      </div>
+
+      <div class="support-donate-card">
+        <div class="support-copy">
+          <p class="eyebrow">Альфа-Банк</p>
+          <h3>Поддержать переводом по QR</h3>
+          <p>
+            Сканируй QR-код в приложении банка и отправляй любую комфортную сумму.
+            Это не покупка доступа, не подписка и не обязательный платёж — просто способ поддержать развитие проекта.
+          </p>
+
+          <div class="support-payment-details" aria-label="Детали поддержки">
+            <div class="support-note-box">
+              <strong>Как поддержать:</strong>
+              <p>Отсканируй QR-код в приложении банка — реквизиты подтянутся автоматически. Любая сумма добровольная.</p>
+            </div>
+
+            <div class="support-note-box compact">
+              <strong>Назначение перевода:</strong>
+              <span>Поддержка POE2 Campaign Codex</span>
+            </div>
+          </div>
+
+          <div class="support-tags" aria-label="Детали поддержки">
+            <span>Альфа-Банк</span>
+            <span>QR-перевод</span>
+            <span>Добровольно</span>
+          </div>
+        </div>
+
+        <div class="qr-card" aria-label="QR-код для перевода через Альфа-Банк">
+          <div class="qr-frame">
+            <img src="./assets/support/alfa-qr-placeholder.png" alt="QR-код для перевода через Альфа-Банк" loading="lazy" />
+          </div>
+        </div>
+      </div>
+
+      <div class="support-extra-grid">
+        <a class="support-link" href="https://t.me/POE2CampaignCodex">Telegram</a>
+        <a class="support-link" href="https://t.me/POE2CampaignCodex?direct">Фидбек / баги</a>
+      </div>
+    </section>
+  </main>
+
+<footer class="site-footer">
+  <p>
+    © 2026 UmbraMalik. POE2 Campaign Codex Overlay · public beta · fan-made tool.
+  </p>
+  <p>
+    Неофициальный фанатский инструмент для Path of Exile 2. Проект не связан с Grinding Gear Games,
+    не одобрен и не поддерживается ими.
+  </p>
+  <p>
+    Path of Exile 2, Path of Exile и связанные названия принадлежат их правообладателям.
+    Сайт и приложение не используют официальные ассеты игры.
+  </p>
+</footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
