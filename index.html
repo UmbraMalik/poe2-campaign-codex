@@ -225,9 +225,6 @@
           <p class="download-note">
             После установки выбери лог-файл игры в настройках. Дальше приложение само проверит новые версии и предложит обновиться через GitHub Releases.
           </p>
-          <p class="download-note security-note">
-            Скачивай приложение только с официальной страницы GitHub Releases ниже. Не используй перезаливы с файлообменников и сторонних сайтов.
-          </p>
         </div>
 
         <div class="download-actions" aria-label="Ссылки для скачивания">
@@ -332,8 +329,8 @@
         </p>
       </div>
 
-      <div class="safety-card safety-card-expanded">
-        <div class="safety-main-copy">
+      <div class="safety-card safety-summary-card">
+        <div>
           <p class="eyebrow">что приложение не делает</p>
           <h3>Без чтения памяти, инжекта и слежки за экраном</h3>
           <p>
@@ -354,8 +351,9 @@
         </ul>
       </div>
 
-      <div class="safety-info-grid">
-        <article class="safety-info-card warning-card">
+      <div class="feature-grid safety-trust-grid">
+        <article class="feature-card warning-card">
+          <span class="icon">!</span>
           <p class="eyebrow">почему Windows может ругаться</p>
           <h3>SmartScreen и антивирусы</h3>
           <p>
@@ -368,7 +366,8 @@
           </p>
         </article>
 
-        <article class="safety-info-card">
+        <article class="feature-card github-card">
+          <span class="icon">#</span>
           <p class="eyebrow">откуда скачивать</p>
           <h3>Только GitHub Releases</h3>
           <p>
@@ -381,7 +380,8 @@
           <code class="hash-command">Get-FileHash "PoE2-Campaign-Codex-Overlay-Setup-*.exe" -Algorithm SHA256</code>
         </article>
 
-        <article class="safety-info-card project-card">
+        <article class="feature-card project-card">
+          <span class="icon">U</span>
           <p class="eyebrow">кто делает проект</p>
           <h3>Один человек + фидбек сообщества</h3>
           <p>
