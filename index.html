@@ -29,6 +29,7 @@
       <a href="#screens">Скрины</a>
       <a href="#install">Установка</a>
       <a href="#updates">Обновления</a>
+      <a href="#safety">Безопасность</a>
       <a href="#support">Поддержать</a>
     </nav>
   </header>
@@ -224,6 +225,9 @@
           <p class="download-note">
             После установки выбери лог-файл игры в настройках. Дальше приложение само проверит новые версии и предложит обновиться через GitHub Releases.
           </p>
+          <p class="download-note security-note">
+            Скачивай приложение только с официальной страницы GitHub Releases ниже. Не используй перезаливы с файлообменников и сторонних сайтов.
+          </p>
         </div>
 
         <div class="download-actions" aria-label="Ссылки для скачивания">
@@ -301,7 +305,7 @@
           <span>02</span>
           <h3>Запусти установщик</h3>
           <p class="step-copy">Открой скачанный файл и пройди обычную установку в Windows.</p>
-          <div class="step-hint">Если Windows покажет SmartScreen — нажми <strong>Подробнее</strong> → <strong>Выполнить в любом случае</strong>.</div>
+          <div class="step-hint">Windows SmartScreen может показать предупреждение, потому что приложение пока не подписано платным цифровым сертификатом. Запускай файл только если понимаешь, что скачал его с официального GitHub Releases.</div>
         </article>
         <article>
           <span>03</span>
@@ -318,26 +322,79 @@
       </div>
     </section>
 
-    <section class="section safety">
-      <div class="safety-card">
-        <div>
-          <p class="eyebrow">важно</p>
-          <h2>Неофициальный фанатский инструмент</h2>
+    <section id="safety" class="section safety">
+      <div class="section-head">
+        <p class="eyebrow">безопасность</p>
+        <h2>Безопасность и доверие</h2>
+        <p>
+          POE2 Campaign Codex Overlay — локальный overlay-помощник. Он не вмешивается в клиент Path of Exile 2
+          и работает через обычный лог-файл игры.
+        </p>
+      </div>
+
+      <div class="safety-card safety-card-expanded">
+        <div class="safety-main-copy">
+          <p class="eyebrow">что приложение не делает</p>
+          <h3>Без чтения памяти, инжекта и слежки за экраном</h3>
           <p>
-            Приложение не связано с Grinding Gear Games, не использует память игры, не инжектится в клиент,
-            не нажимает кнопки за игрока, не скринит экран и не использует OCR. Оно читает обычный лог-файл клиента и показывает подсказки поверх экрана.
+            Overlay определяет текущую зону по строкам из <code>Client.txt</code> / <code>LatestClient.txt</code>
+            и показывает подсказки поверх экрана. Он не читает память игры, не перехватывает сеть и не выполняет действия за игрока.
           </p>
         </div>
 
-        <ul class="safety-list">
-          <li>Адаптирован под русский и английский клиент</li>
+        <ul class="safety-list safety-checks">
+          <li>Не читает память игры</li>
+          <li>Не делает инжект в клиент</li>
+          <li>Не перехватывает сетевой трафик</li>
+          <li>Не нажимает кнопки за игрока</li>
+          <li>Не скринит экран</li>
+          <li>Не использует OCR</li>
           <li>Читает только Client.txt / LatestClient.txt</li>
           <li>Определяет зоны по RU/EN названиям из логов</li>
-          <li>Не читает память, не инжектится, не скринит экран</li>
-          <li>Beta-версия, возможны баги</li>
-          <li>SmartScreen может предупреждать из-за отсутствия цифровой подписи</li>
-          <li>Фидбек по зонам, бонусам и логам приветствуется</li>
         </ul>
+      </div>
+
+      <div class="safety-info-grid">
+        <article class="safety-info-card warning-card">
+          <p class="eyebrow">почему Windows может ругаться</p>
+          <h3>SmartScreen и антивирусы</h3>
+          <p>
+            Приложение пока не подписано платным цифровым сертификатом. Из-за этого Windows SmartScreen
+            и некоторые антивирусы могут относиться к installer-файлу осторожно, особенно пока проект новый и у файла мало скачиваний.
+          </p>
+          <p>
+            Это не означает автоматически, что внутри вирус, но я не прошу отключать антивирус или запускать то,
+            чему вы не доверяете. Если есть сомнения — лучше проверить файл самостоятельно, дождаться следующих версий или не использовать приложение.
+          </p>
+        </article>
+
+        <article class="safety-info-card">
+          <p class="eyebrow">откуда скачивать</p>
+          <h3>Только GitHub Releases</h3>
+          <p>
+            Все релизы публикуются через GitHub Releases. Лучше скачивать только верхний релиз с пометкой <strong>Latest</strong>
+            и не использовать перезаливы со сторонних сайтов.
+          </p>
+          <p>
+            Для каждого релиза можно указывать SHA256-хэш installer-файла, чтобы пользователь мог проверить, что файл не был подменён.
+          </p>
+          <code class="hash-command">Get-FileHash "PoE2-Campaign-Codex-Overlay-Setup-*.exe" -Algorithm SHA256</code>
+        </article>
+
+        <article class="safety-info-card project-card">
+          <p class="eyebrow">кто делает проект</p>
+          <h3>Один человек + фидбек сообщества</h3>
+          <p>
+            POE2 Campaign Codex Overlay — независимый community-проект от UmbraMalik.
+          </p>
+          <p>
+            Проект делает один человек. В некоторых случаях я использую AI-инструменты и фидбек игроков,
+            чтобы быстрее находить ошибки, править зоны, структурировать данные и улучшать overlay.
+          </p>
+          <p>
+            Это не официальный инструмент Grinding Gear Games и не коммерческий продукт.
+          </p>
+        </article>
       </div>
     </section>
 
@@ -396,6 +453,9 @@
 <footer class="site-footer">
   <p>
     © 2026 UmbraMalik. POE2 Campaign Codex Overlay · public beta · fan-made tool.
+  </p>
+  <p>
+    Проект делает один человек. В некоторых случаях — при поддержке AI-инструментов и фидбека игроков.
   </p>
   <p>
     Неофициальный фанатский инструмент для Path of Exile 2. Проект не связан с Grinding Gear Games,
