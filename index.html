@@ -63,9 +63,39 @@
         </p>
 
         <div class="hero-actions">
-          <a class="button primary" href="#download">Скачать актуальную версию</a>
+          <a class="button primary" href="https://github.com/UmbraMalik/poe2-campaign-codex-releases/releases/latest" target="_blank" rel="noopener noreferrer" data-latest-download data-fallback-text="Скачать актуальную версию">Скачать актуальную версию</a>
           <a class="button secondary" href="#install">Как установить</a>
           <a class="button ghost" href="#support">Поддержать</a>
+        </div>
+
+        <div class="hero-release-card" aria-label="Статистика актуального релиза">
+          <div class="hero-release-stats">
+            <div class="hero-release-stat">
+              <span>Скачиваний и обновлений установщика</span>
+              <strong data-installer-downloads-total>—</strong>
+            </div>
+            <div class="hero-release-stat">
+              <span>Актуальная версия</span>
+              <strong data-latest-release-version>—</strong>
+            </div>
+          </div>
+          <div class="hero-release-note">
+            <div class="hero-release-note-head">
+              <span>Последний релиз</span>
+              <a
+                class="release-details-link"
+                href="https://github.com/UmbraMalik/poe2-campaign-codex-releases/releases/latest"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-latest-release-link
+              >
+                Подробности
+              </a>
+            </div>
+            <ul class="hero-release-list" data-latest-release-notes>
+              <li>Подтягиваем изменения с GitHub Releases…</li>
+            </ul>
+          </div>
         </div>
 
         <div class="trust-row" aria-label="Ключевые особенности">
@@ -235,7 +265,7 @@
           <p class="eyebrow">beta build</p>
           <h2>Скачать POE2 Campaign Codex Overlay</h2>
           <p>
-            Все сборки публикуются на GitHub Releases. Скачивай верхний релиз с пометкой Latest — там лежит актуальный установщик, история изменений и поддержка русского/английского клиента.
+            Все сборки публикуются на GitHub Releases. Основная кнопка ниже сама подставляет актуальный installer из последнего релиза и ведёт прямо на скачивание <code>.exe</code>.
           </p>
           <p class="download-note">
             После установки выбери лог-файл игры в настройках. Дальше приложение само проверит новые версии и предложит обновиться через GitHub Releases.
@@ -244,12 +274,15 @@
 
         <div class="download-actions" aria-label="Ссылки для скачивания">
           <a
+            id="latest-download-button"
             class="button primary large"
-            href="https://github.com/UmbraMalik/poe2-campaign-codex-releases/releases"
+            data-latest-download
+            href="https://github.com/UmbraMalik/poe2-campaign-codex-releases/releases/latest"
             target="_blank"
             rel="noopener noreferrer"
+            data-fallback-text="Скачать актуальную версию"
           >
-            Скачать с GitHub Releases
+            Скачать актуальную версию
           </a>
           <a
             class="button secondary large"
@@ -310,7 +343,7 @@
         <article>
           <span>01</span>
           <h3>Скачай установщик</h3>
-          <p class="step-copy">Открой GitHub Releases и скачай установщик из последнего релиза с пометкой <strong>Latest</strong>.</p>
+          <p class="step-copy">Нажми “Скачать актуальную версию” — сайт сам подставит installer <strong>.exe</strong> из последнего GitHub Release.</p>
           <div class="step-hint">Рекомендуемый файл: <code>PoE2-Campaign-Codex-Overlay-Setup-*.exe</code></div>
         </article>
         <article>
