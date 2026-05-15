@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>POE2 Campaign Codex Overlay — русский оверлей для актов</title>
-  <meta name="description" content="Русский оверлей для Path of Exile 2: маршрут актов, бонусы кампании, таймер забега, подсказки по зонам и напоминания по уровням." />
+  <meta name="description" content="Безопасный русский оверлей для Path of Exile 2: текущая зона по логам игры, памятка “Что в локации”, маршрут, таймер, время актов, подсказки и автообновления через GitHub Releases." />
   <meta property="og:title" content="POE2 Campaign Codex Overlay" />
-  <meta property="og:description" content="Русский оверлей для быстрого прохождения актов Path of Exile 2." />
+  <meta property="og:description" content="Безопасный русский оверлей для кампании Path of Exile 2: подсказки по зонам, таймер, время актов и автообновления." />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#0b0f14" />
   <link rel="stylesheet" href="./styles.css" />
@@ -28,6 +28,7 @@
       <a href="#features">Что умеет</a>
       <a href="#screens">Скрины</a>
       <a href="#install">Установка</a>
+      <a href="#updates">Обновления</a>
       <a href="#support">Поддержать</a>
     </nav>
   </header>
@@ -41,12 +42,12 @@
         </div>
         <h1>Оверлей для быстрого прохождения актов Path of Exile 2</h1>
         <p class="lead">
-          POE2 Campaign Codex Overlay показывает текущую зону, маршрут, важные бонусы кампании,
-          напоминания по уровням, спидран-подсказки и таймер забега — без инжекта в клиент игры.
+          POE2 Campaign Codex Overlay читает лог-файл игры, определяет текущую зону и показывает памятку “Что в локации”,
+          следующий переход, скипы, бонусы, статус уровня, таймер забега и время актов — без инжекта в клиент игры.
         </p>
 
         <div class="hero-actions">
-          <a class="button primary" href="#download">Скачать beta</a>
+          <a class="button primary" href="#download">Скачать latest</a>
           <a class="button secondary" href="#install">Как установить</a>
           <a class="button ghost" href="#support">Поддержать</a>
         </div>
@@ -55,6 +56,7 @@
           <span>Без чтения памяти</span>
           <span>Без инжекта</span>
           <span>LatestClient.txt</span>
+          <span>Автообновления</span>
           <span>Windows</span>
         </div>
       </div>
@@ -71,8 +73,8 @@
         <p class="eyebrow">зачем оно нужно</p>
         <h2>Чтобы не держать всю кампанию в голове</h2>
         <p>
-          Вся рутина актов собирается в один боевой HUD: что делать в зоне, что забрать,
-          что скипнуть, когда обновить фласки и какие постоянные бонусы ещё не отмечены.
+          Вся рутина актов собирается в один боевой HUD: что важно в зоне, что забрать,
+          что скипнуть, куда идти дальше, когда добрать уровень и сколько времени ушло на акт.
         </p>
       </div>
 
@@ -83,9 +85,9 @@
           <p>Оверлей читает <code>LatestClient.txt</code> и обновляет текущую локацию без вмешательства в клиент игры.</p>
         </article>
         <article class="feature-card">
-          <span class="icon">☑</span>
-          <h3>Чеклист маршрута</h3>
-          <p>Основные действия по зоне: боссы, переходы, квестовые предметы, что сделать сейчас и куда идти дальше.</p>
+          <span class="icon">☰</span>
+          <h3>Памятка “Что в локации”</h3>
+          <p>Не трекер действий, а обычная памятка по зоне: важные награды, боссы, переходы и то, что не стоит забыть.</p>
         </article>
         <article class="feature-card">
           <span class="icon">✦</span>
@@ -95,17 +97,27 @@
         <article class="feature-card">
           <span class="icon">⏱</span>
           <h3>Таймер забега</h3>
-          <p>Общее время, таймер текущего акта, сплиты и режим “только таймер” для опытных игроков.</p>
+          <p>Общее время, время текущего акта, таблица времени актов, итоги забега и режим “Только таймер” для опытных игроков.</p>
         </article>
         <article class="feature-card">
           <span class="icon">⇡</span>
           <h3>Напоминания по уровням</h3>
-          <p>Фласки, базы оружия/брони, power spikes и ближайшие важные уровни без лишней простыни.</p>
+          <p>Статус уровня подсвечивается прямо в строке таймера: низкий уровень, ок или неизвестно. Плюс ближайшие важные уровни и power spikes.</p>
         </article>
         <article class="feature-card">
           <span class="icon">⚡</span>
           <h3>Спидран-подсказки</h3>
-          <p>Чекпоинт-трюки, городские планы, “если по пути”, навигация и скипы долгих анимаций.</p>
+          <p>Городские планы, “если по пути”, навигация, скипы лишней зачистки и короткие заметки для быстрого прохождения.</p>
+        </article>
+        <article class="feature-card">
+          <span class="icon">▣</span>
+          <h3>Подробная панель</h3>
+          <p>Отдельное окно с маршрутом, бонусами, таймером, временем актов, напоминаниями и итогами забега.</p>
+        </article>
+        <article class="feature-card">
+          <span class="icon">↻</span>
+          <h3>Автообновления</h3>
+          <p>Приложение проверяет GitHub Releases, скачивает обновление внутри приложения и ставит его только после подтверждения.</p>
         </article>
       </div>
     </section>
@@ -114,7 +126,7 @@
       <div class="section-head">
         <p class="eyebrow">как выглядит</p>
         <h2>Скриншоты приложения</h2>
-        <p>Реальный вид оверлея и дополнительных окон приложения в текущей beta-версии.</p>
+        <p>Актуальный вид основного оверлея, подробной панели, бонусов актов, режима “Только таймер” и компактного режима в текущей beta-версии.</p>
       </div>
 
       <div class="screens-showcase">
@@ -125,9 +137,10 @@
             role="tab"
             aria-selected="true"
             data-screen-image="./assets/screens/overlay-real-reference.png"
-            data-screen-alt="Основной overlay: текущая зона, чеклист, спидран-подсказки и ближайший прогресс"
+            data-screen-alt="Основной overlay: текущая зона, памятка Что в локации, следующий переход, скипы и статус уровня"
             data-screen-title="Основной overlay"
-            data-screen-text="Текущая зона, чеклист, следующий переход, спидран-подсказки и важные напоминания прямо поверх игры."
+            data-screen-text="Текущая зона, памятка “Что в локации”, следующий переход, скипы, важные подсказки и статус уровня прямо поверх игры."
+            data-screen-variant="portrait"
           >
             Основной overlay
           </button>
@@ -139,7 +152,8 @@
             data-screen-image="./assets/screens/companion-panel-reference.png"
             data-screen-alt="Подробная панель: маршрут, бонусы, таймер, напоминания и итоги забега"
             data-screen-title="Подробная панель"
-            data-screen-text="Отдельное окно с маршрутом, бонусами, таймером, напоминаниями и итогами забега — когда нужен весь контекст сразу."
+            data-screen-text="Отдельное окно с маршрутом, бонусами, таймером, временем актов, напоминаниями и итогами забега — когда нужен весь контекст сразу."
+            data-screen-variant="landscape"
           >
             Подробная панель
           </button>
@@ -149,27 +163,51 @@
             role="tab"
             aria-selected="false"
             data-screen-image="./assets/screens/timer-mode-reference.png"
-            data-screen-alt="Режим только таймер: компактный вид с таймером, уровнем и следующим переходом"
+            data-screen-alt="Режим только таймер: вид с таймером, уровнем и следующим переходом"
             data-screen-title="Режим “только таймер”"
-            data-screen-text="Компактный режим для тех, кто хочет держать на экране только таймер, уровень и ближайший переход без перегруза деталями."
+            data-screen-text="Режим для тех, кто хочет держать на экране таймер, уровень и ближайший переход без подробной панели."
+            data-screen-variant="landscape"
           >
             Только таймер
+          </button>
+          <button
+            class="screen-tab"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            data-screen-image="./assets/screens/compact-mode-reference.png"
+            data-screen-alt="Компактный режим: узкая панель с общим временем, актом, уровнем и рекомендацией"
+            data-screen-title="Компактный режим"
+            data-screen-text="Самый компактный вариант: узкая панель с ключевой информацией для тех, кому нужен минимум визуального шума."
+            data-screen-variant="compact"
+          >
+            Компактный режим
           </button>
         </div>
 
         <figure class="screen-stage">
           <div class="screen-stage-media">
-            <img
-              id="screen-preview-image"
-              class="screen-preview-image"
-              src="./assets/screens/overlay-real-reference.png"
-              alt="Основной overlay: текущая зона, чеклист, спидран-подсказки и ближайший прогресс"
-              loading="lazy"
-            />
+            <div class="screen-window" id="screen-window" data-variant="portrait">
+              <div class="screen-window-bar">
+                <div class="screen-window-dots" aria-hidden="true">
+                  <span></span><span></span><span></span>
+                </div>
+                <span class="screen-window-title" id="screen-window-label">POE2 Campaign Codex Overlay</span>
+              </div>
+              <div class="screen-window-body">
+                <img
+                  id="screen-preview-image"
+                  class="screen-preview-image"
+                  src="./assets/screens/overlay-real-reference.png"
+                  alt="Основной overlay: текущая зона, памятка Что в локации, следующий переход, скипы и статус уровня"
+                  loading="lazy"
+                />
+              </div>
+            </div>
           </div>
           <figcaption class="screen-stage-caption">
             <h3 id="screen-preview-title">Основной overlay</h3>
-            <p id="screen-preview-text">Текущая зона, чеклист, следующий переход, спидран-подсказки и важные напоминания прямо поверх игры.</p>
+            <p id="screen-preview-text">Текущая зона, памятка “Что в локации”, следующий переход, скипы, важные подсказки и статус уровня прямо поверх игры.</p>
           </figcaption>
         </figure>
       </div>
@@ -181,30 +219,29 @@
           <p class="eyebrow">beta build</p>
           <h2>Скачать POE2 Campaign Codex Overlay</h2>
           <p>
-            Выбери удобный источник загрузки. Рекомендуемый вариант — Яндекс Диск, зеркало — Google Drive.
-            В Telegram-посте будут обновления, описание версии и быстрый фидбек.
+            Все сборки теперь публикуются на GitHub Releases. Скачивай верхний релиз с пометкой Latest — там лежит актуальный установщик и история изменений.
           </p>
           <p class="download-note">
-            После скачивания распакуй архив, запусти <code>PoE2 Campaign Codex Overlay.exe</code> и выбери лог-файл игры в настройках.
+            После установки выбери лог-файл игры в настройках. Дальше приложение само проверит новые версии и предложит обновиться через GitHub Releases.
           </p>
         </div>
 
         <div class="download-actions" aria-label="Ссылки для скачивания">
           <a
             class="button primary large"
-            href="https://disk.yandex.ru/d/SXXhA48_XUBgsA"
+            href="https://github.com/UmbraMalik/poe2-campaign-codex-releases/releases"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Скачать с Яндекс Диска
+            Скачать с GitHub Releases
           </a>
           <a
             class="button secondary large"
-            href="https://drive.google.com/file/d/1qoW4mYKW1t6qaNF1Z3df0SZhCFuSJjlZ/view?usp=sharing"
+            href="https://github.com/UmbraMalik/poe2-campaign-codex-releases/releases/latest"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Скачать с Google Drive
+            Последний релиз
           </a>
           <a
             class="button ghost large"
@@ -218,6 +255,35 @@
       </div>
     </section>
 
+    <section id="updates" class="section updates-section">
+      <div class="section-head">
+        <p class="eyebrow">обновления</p>
+        <h2>Новые версии приходят через GitHub Releases</h2>
+        <p>
+          Приложение само проверяет наличие обновлений. Если новая версия доступна, оно покажет окно,
+          скачает обновление внутри приложения и предложит установить его только после подтверждения.
+        </p>
+      </div>
+
+      <div class="updates-grid">
+        <article class="feature-card">
+          <span class="icon">1</span>
+          <h3>Проверка</h3>
+          <p>При запуске и вручную из настроек приложение проверяет последний релиз на GitHub.</p>
+        </article>
+        <article class="feature-card">
+          <span class="icon">2</span>
+          <h3>Загрузка</h3>
+          <p>Обновление скачивается внутри приложения. Прогресс отображается в окне обновления и настройках.</p>
+        </article>
+        <article class="feature-card">
+          <span class="icon">3</span>
+          <h3>Установка</h3>
+          <p>Ничего не ставится молча: установка начинается только после кнопки “Установить и перезапустить”.</p>
+        </article>
+      </div>
+    </section>
+
     <section id="install" class="section">
       <div class="section-head">
         <p class="eyebrow">установка</p>
@@ -227,23 +293,27 @@
       <div class="steps">
         <article>
           <span>01</span>
-          <h3>Скачай архив</h3>
-          <p>Скачай beta-сборку и распакуй папку в любое удобное место.</p>
+          <h3>Скачай установщик</h3>
+          <p class="step-copy">Открой GitHub Releases и скачай установщик из последнего релиза с пометкой <strong>Latest</strong>.</p>
+          <div class="step-hint">Рекомендуемый файл: <code>PoE2-Campaign-Codex-Overlay-Setup-*.exe</code></div>
         </article>
         <article>
           <span>02</span>
-          <h3>Запусти exe</h3>
-          <p>Открой <code>PoE2 Campaign Codex Overlay.exe</code>. Windows может показать SmartScreen.</p>
+          <h3>Запусти установщик</h3>
+          <p class="step-copy">Открой скачанный файл и пройди обычную установку в Windows.</p>
+          <div class="step-hint">Если Windows покажет SmartScreen — нажми <strong>Подробнее</strong> → <strong>Выполнить в любом случае</strong>.</div>
         </article>
         <article>
           <span>03</span>
           <h3>Выбери лог-файл</h3>
-          <p>В настройках укажи лог-файл <code>Path of Exile 2/logs/LatestClient.txt</code>.</p>
+          <p class="step-copy">После первого запуска открой настройки и укажи путь к игровому логу.</p>
+          <div class="step-hint"><code>Path of Exile 2/logs/LatestClient.txt</code></div>
         </article>
         <article>
           <span>04</span>
           <h3>Играй</h3>
-          <p>Оверлей начнёт обновляться по логам: зоны, уровни, бонусы и подсказки.</p>
+          <p class="step-copy">Оверлей начнёт обновляться по логам и сразу покажет нужный контекст по текущей зоне.</p>
+          <div class="step-hint">Зоны, уровень, маршрут, подсказки, бонусы, таймер и время актов — всё в одном месте.</div>
         </article>
       </div>
     </section>
@@ -254,13 +324,15 @@
           <p class="eyebrow">важно</p>
           <h2>Неофициальный фанатский инструмент</h2>
           <p>
-            Приложение не связано с Grinding Gear Games, не использует память игры, не инжектится в клиент
-            и не нажимает кнопки за игрока. Оно читает обычный лог-файл клиента и показывает подсказки поверх экрана.
+            Приложение не связано с Grinding Gear Games, не использует память игры, не инжектится в клиент,
+            не нажимает кнопки за игрока, не скринит экран и не использует OCR. Оно читает обычный лог-файл клиента и показывает подсказки поверх экрана.
           </p>
         </div>
 
         <ul class="safety-list">
           <li>Работает под русский клиент</li>
+          <li>Читает только Client.txt / LatestClient.txt</li>
+          <li>Не читает память, не инжектится, не скринит экран</li>
           <li>Beta-версия, возможны баги</li>
           <li>SmartScreen может предупреждать из-за отсутствия цифровой подписи</li>
           <li>Фидбек по зонам, бонусам и логам приветствуется</li>

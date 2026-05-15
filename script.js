@@ -63,6 +63,8 @@ const screenTabs = document.querySelectorAll('.screen-tab');
 const screenPreviewImage = document.getElementById('screen-preview-image');
 const screenPreviewTitle = document.getElementById('screen-preview-title');
 const screenPreviewText = document.getElementById('screen-preview-text');
+const screenWindow = document.getElementById('screen-window');
+const screenWindowLabel = document.getElementById('screen-window-label');
 
 screenTabs.forEach((tab) => {
   tab.addEventListener('click', () => {
@@ -80,10 +82,15 @@ screenTabs.forEach((tab) => {
     const nextAlt = tab.getAttribute('data-screen-alt');
     const nextTitle = tab.getAttribute('data-screen-title');
     const nextText = tab.getAttribute('data-screen-text');
+    const nextVariant = tab.getAttribute('data-screen-variant') || 'landscape';
 
     if (nextImage) screenPreviewImage.src = nextImage;
     if (nextAlt) screenPreviewImage.alt = nextAlt;
-    if (nextTitle) screenPreviewTitle.textContent = nextTitle;
+    if (nextTitle) {
+      screenPreviewTitle.textContent = nextTitle;
+      if (screenWindowLabel) screenWindowLabel.textContent = nextTitle;
+    }
     if (nextText) screenPreviewText.textContent = nextText;
+    if (screenWindow) screenWindow.dataset.variant = nextVariant;
   });
 });
