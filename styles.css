@@ -267,11 +267,15 @@ h3 {
 
 .hero-panel {
   min-width: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .hero-shot-card {
   position: relative;
-  margin: 0;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
   padding: 10px;
   border: 1px solid var(--gold-border);
   border-radius: var(--radius-xl);
@@ -281,7 +285,8 @@ h3 {
 
 .hero-shot-card img {
   display: block;
-  width: 100%;
+  width: auto;
+  max-width: min(100%, 338px);
   max-height: min(720px, 78vh);
   object-fit: contain;
   border-radius: calc(var(--radius-xl) - 10px);
@@ -523,7 +528,7 @@ h3 {
 }
 
 .screen-stage-media {
-  min-height: 520px;
+  min-height: 460px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -545,7 +550,7 @@ h3 {
 }
 
 .screen-window[data-variant="portrait"] {
-  max-width: 520px;
+  max-width: 390px;
 }
 
 .screen-window[data-variant="landscape"] {
@@ -553,7 +558,11 @@ h3 {
 }
 
 .screen-window[data-variant="compact"] {
-  max-width: 620px;
+  max-width: 380px;
+}
+
+.screen-window[data-variant="timer"] {
+  max-width: 340px;
 }
 
 .screen-window-bar {
@@ -605,11 +614,13 @@ h3 {
   border-radius: 0;
 }
 
-.screen-window[data-variant="compact"] .screen-window-body {
-  padding: 24px;
+.screen-window[data-variant="compact"] .screen-window-body,
+.screen-window[data-variant="timer"] .screen-window-body {
+  padding: 18px;
 }
 
-.screen-window[data-variant="compact"] .screen-preview-image {
+.screen-window[data-variant="compact"] .screen-preview-image,
+.screen-window[data-variant="timer"] .screen-preview-image {
   width: auto;
   max-width: 100%;
   margin: 0 auto;
@@ -960,6 +971,10 @@ h3 {
 @media (max-width: 520px) {
   .hero-actions .button {
     width: 100%;
+  }
+
+  .hero-shot-card img {
+    max-width: min(100%, 320px);
   }
 
   .overlay-card {
