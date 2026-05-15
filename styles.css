@@ -1354,3 +1354,124 @@ h3 {
   white-space: normal;
   word-break: break-word;
 }
+
+
+.demo-section {
+  padding-top: 34px;
+}
+
+.demo-card {
+  border: 1px solid rgba(215, 168, 90, 0.22);
+  border-radius: 28px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 85% 0%, rgba(215, 168, 90, 0.12), transparent 18rem),
+    linear-gradient(180deg, rgba(25, 31, 37, 0.92), rgba(6, 9, 13, 0.96));
+  box-shadow: 0 22px 54px rgba(0, 0, 0, 0.30);
+}
+
+.demo-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 24px 18px;
+  border-bottom: 1px solid rgba(215, 168, 90, 0.14);
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+}
+
+.demo-card-title-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.demo-badge {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 215, 136, 0.52);
+  background: linear-gradient(180deg, #f5c46b, #c99034);
+  color: #1b1308;
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 10px 24px rgba(215, 168, 90, 0.22);
+}
+
+.demo-card-title-wrap h3 {
+  margin: 0 0 6px;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+}
+
+.demo-card-title-wrap p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.demo-quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.demo-video-frame {
+  padding: 24px;
+  background:
+    linear-gradient(135deg, rgba(215, 168, 90, 0.10), transparent),
+    radial-gradient(circle at 50% 30%, rgba(120, 82, 38, 0.25), transparent 50%),
+    #05080b;
+}
+
+.demo-window {
+  width: 100%;
+  max-width: none;
+}
+
+.demo-video-shell {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.demo-video-shell iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 900px) {
+  .demo-card-head {
+    flex-direction: column;
+  }
+
+  .demo-quick-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 520px) {
+  .demo-card-head,
+  .demo-video-frame {
+    padding: 16px;
+  }
+
+  .demo-card-title-wrap {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .demo-quick-actions .button {
+    width: 100%;
+  }
+}
