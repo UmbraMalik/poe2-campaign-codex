@@ -238,10 +238,20 @@ loadGithubReleaseStats().catch((error) => {
 
   setTextAll(installerDownloadsTotalEls, '—');
   setTextAll(latestReleaseVersionEls, '—');
-  renderReleaseNotes(latestReleaseNotesEls, ['Не удалось подтянуть данные последнего релиза. Кнопка ведёт на GitHub Releases.']);
+  renderReleaseNotes(latestReleaseNotesEls, [
+    'Не удалось подтянуть данные последнего релиза.',
+    'Если включён VPN — попробуй выключить его и обновить страницу.',
+    'Либо скачай актуальную сборку вручную через GitHub Releases.'
+  ]);
+
+  latestReleaseLinkEls.forEach((link) => {
+    link.href = `https://github.com/${RELEASES_REPO}/releases/latest`;
+  });
 
   latestDownloadButtons.forEach((button) => {
-    button.textContent = button.dataset.fallbackText || 'Скачать актуальную версию';
+    button.textContent = 'Скачать через GitHub';
+    button.href = `https://github.com/${RELEASES_REPO}/releases/latest`;
+    button.setAttribute('aria-label', 'Открыть GitHub Releases для ручного скачивания');
   });
 });
 
