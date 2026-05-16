@@ -1952,6 +1952,10 @@ h3 {
   padding-bottom: 34px;
 }
 
+.community-eyebrow {
+  margin: 0 0 -4px;
+}
+
 .community-section .mentions-card-compact {
   margin: 0;
   min-width: 0;
@@ -2026,5 +2030,89 @@ h3 {
     justify-items: center;
     text-align: center;
     padding: 14px 40px 14px;
+  }
+}
+
+
+/* Community links */
+
+.community-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.community-link-card {
+  min-height: 92px;
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid rgba(215, 168, 90, 0.20);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(215, 168, 90, 0.10), transparent 9rem),
+    linear-gradient(180deg, rgba(22, 27, 32, 0.82), rgba(7, 10, 14, 0.92));
+  color: var(--text);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.community-link-card:hover {
+  transform: translateY(-1px);
+  border-color: rgba(245, 196, 107, 0.46);
+  background:
+    radial-gradient(circle at 10% 0%, rgba(215, 168, 90, 0.16), transparent 9rem),
+    linear-gradient(180deg, rgba(34, 40, 46, 0.86), rgba(8, 11, 16, 0.94));
+}
+
+.community-link-icon {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  border: 1px solid rgba(215, 168, 90, 0.34);
+  background:
+    radial-gradient(circle at 35% 25%, rgba(255, 255, 255, 0.16), transparent 38%),
+    linear-gradient(145deg, rgba(31, 43, 55, 0.94), rgba(24, 18, 14, 0.94));
+  color: #ffe2a0;
+  font-size: 0.88rem;
+  font-weight: 900;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.22);
+}
+
+.community-link-card strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--text);
+  font-size: 1.02rem;
+  line-height: 1.1;
+}
+
+.community-link-card small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.35;
+}
+
+@media (max-width: 860px) {
+  .community-links-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .community-link-card {
+    grid-template-columns: 42px minmax(0, 1fr);
+    min-height: 82px;
+    padding: 12px;
+  }
+
+  .community-link-icon {
+    width: 42px;
+    height: 42px;
   }
 }
