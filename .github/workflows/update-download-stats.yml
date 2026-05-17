@@ -1,0 +1,86 @@
+name: Update download stats
+
+on:
+  schedule:
+    # Раз в 10 минут. Проверяем GitHub download_count,
+    # но сайт деплоим только если stats/*.json реально изменились.
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: update-download-stats
+  cancel-in-progress: false
+
+jobs:
+  update-download-stats:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Update stats files
+        run: node scripts/update-download-stats.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASES_REPO: UmbraMalik/poe2-campaign-codex-releases
+
+      - name: Detect stats changes
+        id: stats_changes
+        shell: bash
+        run: |
+          if git diff --quiet -- stats/downloads.json stats/downloads-state.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Download stats are already up to date."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "Download stats changed."
+          fi
+
+      - name: Commit updated stats
+        if: steps.stats_changes.outputs.changed == 'true'
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add stats/downloads.json stats/downloads-state.json
+          git commit -m "chore(stats): update download counters"
+          git push
+
+      - name: Configure GitHub Pages
+        if: steps.stats_changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        uses: actions/configure-pages@v5
+
+      - name: Prepare Pages artifact
+        if: steps.stats_changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        shell: bash
+        run: |
+          rm -rf _site
+          mkdir -p _site
+
+          rsync -av ./ _site/ \
+            --exclude '.git' \
+            --exclude '.github' \
+            --exclude 'scripts' \
+            --exclude '_site' \
+            --exclude '*.zip'
+
+      - name: Upload Pages artifact
+        if: steps.stats_changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy GitHub Pages
+        if: steps.stats_changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        uses: actions/deploy-pages@v4
