@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "totalDownloads": 38,
+  "manualAdjustmentDownloads": 0,
+  "updatedAt": "2026-05-17T09:11:45Z",
+  "sourceRepo": "UmbraMalik/poe2-campaign-codex-releases",
+  "bootstrapNote": "Initial public baseline from manual GitHub Releases API check. First scheduled run adopts current asset IDs without double-counting.",
+  "assets": {},
+  "runs": [
+    {
+      "ranAt": "2026-05-17T09:11:45Z",
+      "latestVersion": "0.2.3",
+      "visibleInstallerAssets": 17,
+      "githubCurrentInstallerDownloads": 38,
+      "totalDownloads": 38,
+      "warningsCount": 0,
+      "source": "manual-bootstrap"
+    }
+  ]
+}

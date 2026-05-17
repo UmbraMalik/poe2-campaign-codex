@@ -97,6 +97,7 @@ screenTabs.forEach((tab) => {
 
 
 const RELEASES_REPO = "UmbraMalik/poe2-campaign-codex-releases";
+const DOWNLOAD_STATS_URL = './stats/downloads.json';
 const latestDownloadButtons = Array.from(document.querySelectorAll('[data-latest-download]'));
 const installerDownloadsTotalEls = Array.from(document.querySelectorAll('[data-installer-downloads-total]'));
 const latestReleaseVersionEls = Array.from(document.querySelectorAll('[data-latest-release-version]'));
@@ -104,11 +105,12 @@ const latestReleaseNotesEls = Array.from(document.querySelectorAll('[data-latest
 const latestReleaseLinkEls = Array.from(document.querySelectorAll('[data-latest-release-link]'));
 
 function isInstallerAsset(asset) {
-  return Boolean(
-    asset &&
-    typeof asset.name === 'string' &&
-    asset.name.endsWith('.exe') &&
-    asset.name.includes('Setup')
+  const name = String(asset?.name || '').toLowerCase();
+
+  return (
+    name.endsWith('.exe') &&
+    !name.endsWith('.blockmap') &&
+    (name.includes('setup') || name.includes('campaign-codex'))
   );
 }
 
@@ -174,23 +176,44 @@ function renderReleaseNotes(elements, notes) {
   });
 }
 
-async function loadGithubReleaseStats() {
-  if (
-    latestDownloadButtons.length === 0 &&
-    installerDownloadsTotalEls.length === 0 &&
-    latestReleaseVersionEls.length === 0 &&
-    latestReleaseNotesEls.length === 0
-  ) {
-    return;
+async function loadPublicDownloadStats() {
+  const cacheBuster = `v=${Date.now()}`;
+  const separator = DOWNLOAD_STATS_URL.includes('?') ? '&' : '?';
+  const response = await fetch(`${DOWNLOAD_STATS_URL}${separator}${cacheBuster}`, {
+    cache: 'no-store',
+    headers: { Accept: 'application/json' },
+  });
+
+  if (!response.ok) {
+    throw new Error(`Download stats request failed: ${response.status}`);
   }
 
+  return response.json();
+}
+
+function renderPublicDownloadStats(stats) {
+  const totalDownloads = Number(stats?.totalDownloads || 0);
+  const latestVersion = normalizeVersionTag(stats?.latestVersion);
+
+  setTextAll(installerDownloadsTotalEls, formatNumber(totalDownloads));
+
+  if (latestVersion !== '—') {
+    setTextAll(latestReleaseVersionEls, latestVersion);
+  }
+}
+
+async function loadLatestReleaseDetails() {
   const latestUrl = `https://api.github.com/repos/${RELEASES_REPO}/releases/latest`;
-  const allReleasesUrl = `https://api.github.com/repos/${RELEASES_REPO}/releases?per_page=100`;
-
   const latestResponse = await fetch(latestUrl, { headers: { Accept: 'application/vnd.github+json' } });
-  if (!latestResponse.ok) throw new Error(`GitHub latest release request failed: ${latestResponse.status}`);
 
-  const latestRelease = await latestResponse.json();
+  if (!latestResponse.ok) {
+    throw new Error(`GitHub latest release request failed: ${latestResponse.status}`);
+  }
+
+  return latestResponse.json();
+}
+
+function renderLatestReleaseDetails(latestRelease) {
   const latestInstaller = (latestRelease.assets || []).find(isInstallerAsset);
   const versionLabel = normalizeVersionTag(latestRelease.tag_name || latestRelease.name);
 
@@ -208,21 +231,60 @@ async function loadGithubReleaseStats() {
       button.setAttribute('aria-label', `Скачать установщик версии ${versionLabel}`);
     });
   }
+}
 
-  const releasesResponse = await fetch(allReleasesUrl, { headers: { Accept: 'application/vnd.github+json' } });
-  if (!releasesResponse.ok) throw new Error(`GitHub releases request failed: ${releasesResponse.status}`);
+function renderReleaseFallback(stats) {
+  const statsVersion = normalizeVersionTag(stats?.latestVersion);
 
-  const releases = await releasesResponse.json();
-  const totalInstallerDownloads = releases.reduce((sum, release) => {
-    const releaseAssets = Array.isArray(release.assets) ? release.assets : [];
-    const releaseInstallerDownloads = releaseAssets
-      .filter(isInstallerAsset)
-      .reduce((assetSum, asset) => assetSum + (asset.download_count || 0), 0);
+  if (statsVersion !== '—') {
+    setTextAll(latestReleaseVersionEls, statsVersion);
+  } else {
+    setTextAll(latestReleaseVersionEls, '—');
+  }
 
-    return sum + releaseInstallerDownloads;
-  }, 0);
+  renderReleaseNotes(latestReleaseNotesEls, [
+    'Не удалось подтянуть данные последнего релиза.',
+    'Скачай актуальную сборку вручную через GitHub Releases.'
+  ]);
 
-  setTextAll(installerDownloadsTotalEls, formatNumber(totalInstallerDownloads));
+  latestReleaseLinkEls.forEach((link) => {
+    link.href = `https://github.com/${RELEASES_REPO}/releases/latest`;
+  });
+
+  latestDownloadButtons.forEach((button) => {
+    button.textContent = statsVersion !== '—' ? `Скачать ${statsVersion}` : 'Скачать через GitHub';
+    button.href = `https://github.com/${RELEASES_REPO}/releases/latest`;
+    button.setAttribute('aria-label', 'Открыть GitHub Releases для ручного скачивания');
+  });
+}
+
+async function loadGithubReleaseStats() {
+  if (
+    latestDownloadButtons.length === 0 &&
+    installerDownloadsTotalEls.length === 0 &&
+    latestReleaseVersionEls.length === 0 &&
+    latestReleaseNotesEls.length === 0
+  ) {
+    return;
+  }
+
+  let publicStats = null;
+
+  try {
+    publicStats = await loadPublicDownloadStats();
+    renderPublicDownloadStats(publicStats);
+  } catch (error) {
+    console.warn('Не удалось загрузить накопительную статистику скачиваний', error);
+    setTextAll(installerDownloadsTotalEls, '—');
+  }
+
+  try {
+    const latestRelease = await loadLatestReleaseDetails();
+    renderLatestReleaseDetails(latestRelease);
+  } catch (error) {
+    console.warn('Не удалось загрузить данные последнего релиза GitHub', error);
+    renderReleaseFallback(publicStats);
+  }
 }
 
 latestDownloadButtons.forEach((button) => {
@@ -234,24 +296,7 @@ latestDownloadButtons.forEach((button) => {
 });
 
 loadGithubReleaseStats().catch((error) => {
-  console.warn('Не удалось загрузить статистику GitHub Releases', error);
-
+  console.warn('Не удалось загрузить данные релиза и статистики', error);
   setTextAll(installerDownloadsTotalEls, '—');
-  setTextAll(latestReleaseVersionEls, '—');
-  renderReleaseNotes(latestReleaseNotesEls, [
-    'Не удалось подтянуть данные последнего релиза.',
-    'Если включён VPN — попробуй выключить его и обновить страницу.',
-    'Либо скачай актуальную сборку вручную через GitHub Releases.'
-  ]);
-
-  latestReleaseLinkEls.forEach((link) => {
-    link.href = `https://github.com/${RELEASES_REPO}/releases/latest`;
-  });
-
-  latestDownloadButtons.forEach((button) => {
-    button.textContent = 'Скачать через GitHub';
-    button.href = `https://github.com/${RELEASES_REPO}/releases/latest`;
-    button.setAttribute('aria-label', 'Открыть GitHub Releases для ручного скачивания');
-  });
+  renderReleaseFallback(null);
 });
-
