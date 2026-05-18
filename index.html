@@ -586,6 +586,29 @@
         </div>
       </div>
 
+
+
+      <div class="mentions-card mentions-card-compact community-supporters-card">
+        <div class="mentions-head">
+          <div>
+            <p class="eyebrow">поддержали проект</p>
+            <h2>Рамка поддержавших донатом</h2>
+            <p>
+              Если отправляешь поддержку и хочешь попасть сюда — укажи ник в комментарии к переводу или донату.
+              Добавляю вручную после проверки. Формат в рамке: ник — сумма.
+            </p>
+          </div>
+        </div>
+
+        <div class="supporters-frame" aria-label="Пользователи, поддержавшие проект переводом">
+          <span class="supporter-chip supporter-chip-placeholder">
+            <span class="supporter-chip-name">Ваш ник</span>
+            <span class="supporter-chip-separator" aria-hidden="true">—</span>
+            <span class="supporter-chip-amount">сумма</span>
+          </span>
+        </div>
+      </div>
+
       <div class="community-links-grid" aria-label="Ссылки сообщества">
         <a class="community-link-card" href="https://t.me/POE2CampaignCodex" target="_blank" rel="noopener noreferrer">
           <span class="community-link-icon" aria-hidden="true">TG</span>
@@ -623,36 +646,66 @@
 
       <div class="support-donate-card">
         <div class="support-copy">
-          <p class="eyebrow">Альфа-Банк</p>
-          <h3>Поддержать переводом по QR</h3>
+          <p class="eyebrow">добровольная поддержка</p>
+          <h3>Поддержать проект удобным способом</h3>
           <p>
-            Сканируй QR-код в приложении банка и отправляй любую комфортную сумму.
-            Это не покупка доступа, не подписка и не обязательный платёж — просто способ поддержать развитие проекта.
+            Можно перевести по QR через Альфа-Банк или отправить донат через DonationAlerts.
+            Это не покупка доступа и не подписка — просто способ сказать “спасибо” и помочь развитию проекта.
           </p>
 
-          <div class="support-payment-details" aria-label="Детали поддержки">
-            <div class="support-note-box">
-              <strong>Как поддержать:</strong>
-              <p>Отсканируй QR-код в приложении банка — реквизиты подтянутся автоматически. Любая сумма добровольная.</p>
+          <div class="support-methods" aria-label="Способы поддержки проекта">
+            <div class="support-method-card support-method-card-qr">
+              <div class="support-method-head">
+                <span class="support-method-icon support-method-icon-image support-method-icon-alfa" aria-hidden="true"><img src="./assets/support/alfa-bank-logo.png" alt="" loading="lazy" /></span>
+                <div>
+                  <p class="eyebrow">Альфа-Банк</p>
+                  <strong>Перевод по QR</strong>
+                </div>
+              </div>
+              <p>
+                Отсканируй QR-код в приложении банка — реквизиты подтянутся автоматически.
+                Любая сумма добровольная.
+              </p>
+              <div class="support-note-box compact">
+                <strong>Комментарий:</strong>
+                <span>Codex</span>
+              </div>
             </div>
 
-            <div class="support-note-box compact">
-              <strong>Комментарий к переводу:</strong>
-              <span>Codex</span>
-              <p class="support-helper-text">
-                Если хочешь попасть в рамку поддержавших проект — укажи свой ник в комментарии к переводу.
+            <a
+              class="support-method-card support-method-card-link"
+              href="https://www.donationalerts.com/r/umbramalik"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Открыть DonationAlerts для поддержки проекта"
+            >
+              <div class="support-method-head">
+                <span class="support-method-icon support-method-icon-image support-method-icon-da" aria-hidden="true"><img src="./assets/support/donationalerts-logo.png" alt="" loading="lazy" /></span>
+                <div>
+                  <p class="eyebrow">DonationAlerts</p>
+                  <strong>Поддержать через донат</strong>
+                </div>
+              </div>
+              <p>
+                Подойдёт, если удобнее поддержать через DonationAlerts. Откроется отдельная страница доната.
               </p>
-            </div>
+              <span class="support-method-action">Открыть DonationAlerts ↗</span>
+            </a>
           </div>
+
+          <p class="support-helper-text support-nick-note">
+            Если хочешь попасть в рамку поддержавших проект — укажи свой ник в комментарии к переводу или в сообщении к донату.
+          </p>
 
           <div class="support-tags" aria-label="Детали поддержки">
             <span>Альфа-Банк</span>
-            <span>QR-перевод</span>
+            <span>DonationAlerts</span>
             <span>Добровольно</span>
           </div>
         </div>
 
         <div class="qr-card" aria-label="QR-код для перевода через Альфа-Банк">
+          <div class="qr-card-label">QR-перевод</div>
           <div class="qr-frame">
             <img src="./assets/support/alfa-qr-placeholder.png" alt="QR-код для перевода через Альфа-Банк" loading="lazy" />
           </div>
