@@ -2151,3 +2151,11 @@ h3 {
     height: 42px;
   }
 }
+
+.support-helper-text {
+  margin: 8px 0 0;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--muted);
+  opacity: 0.82;
+}
