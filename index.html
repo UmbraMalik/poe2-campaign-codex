@@ -39,17 +39,25 @@
       </span>
     </a>
 
-    <nav class="top-nav" aria-label="Навигация">
-      <a href="#features">Что умеет</a>
-      <a href="#demo">Демо</a>
-      <a href="#source">Исходники</a>
-      <a href="#screens">Скрины</a>
-      <a href="#install">Установка</a>
-      <a href="#updates">Обновления</a>
-      <a href="#safety">Безопасность</a>
-      <a href="#mentions">Сообщество</a>
-      <a href="#support">Поддержать</a>
-    </nav>
+    <div class="header-controls">
+      <nav class="top-nav" aria-label="Навигация">
+        <a href="#features">Что умеет</a>
+        <a href="#demo">Демо</a>
+        <a href="#source">Исходники</a>
+        <a href="#screens">Скрины</a>
+        <a href="#install">Установка</a>
+        <a href="#updates">Обновления</a>
+        <a href="#safety">Безопасность</a>
+        <a href="#mentions">Сообщество</a>
+        <a href="#support">Поддержать</a>
+      </nav>
+
+      <button class="language-toggle" type="button" data-language-toggle aria-label="Switch language" title="Switch language">
+        <span class="language-toggle-pill" aria-hidden="true"></span>
+        <span class="language-toggle-option" data-language-label="ru">RU</span>
+        <span class="language-toggle-option" data-language-label="en">EN</span>
+      </button>
+    </div>
   </header>
 
   <main id="top">
@@ -112,7 +120,7 @@
 
       <div class="hero-panel" aria-label="Реальный скриншот оверлея">
         <figure class="hero-shot-card">
-          <img src="./assets/screens/overlay-real-reference-full.png" alt="Реальный скриншот POE2 Campaign Codex Overlay в игре" loading="eager" />
+          <img src="./assets/screens/overlay-real-reference-full.png" data-image-ru="./assets/screens/overlay-real-reference-full.png" data-image-en="./assets/screens/en-hero-overlay.png" alt="Реальный скриншот POE2 Campaign Codex Overlay в игре" loading="eager" />
         </figure>
       </div>
     </section>
@@ -238,7 +246,7 @@
           rel="noopener noreferrer"
           aria-label="Открыть исходный код POE2 Campaign Codex Overlay на GitHub"
         >
-          <img src="./assets/open-source-github-card.svg" alt="POE2 Campaign Codex Overlay — открытый исходный код на GitHub" loading="lazy" />
+          <img src="./assets/open-source-github-card.svg" data-image-ru="./assets/open-source-github-card.svg" data-image-en="./assets/open-source-github-card-en.png" alt="POE2 Campaign Codex Overlay — открытый исходный код на GitHub" loading="lazy" />
         </a>
       </div>
     </section>
@@ -258,6 +266,8 @@
             role="tab"
             aria-selected="true"
             data-screen-image="./assets/screens/overlay-real-reference.png"
+            data-screen-image-ru="./assets/screens/overlay-real-reference.png"
+            data-screen-image-en="./assets/screens/en-overlay-main.png"
             data-screen-alt="Основной overlay: текущая зона, памятка Что в локации, следующий переход, скипы и статус уровня"
             data-screen-title="Основной overlay"
             data-screen-text="Текущая зона, памятка “Что в локации”, следующий переход, скипы, важные подсказки и статус уровня прямо поверх игры."
@@ -271,6 +281,8 @@
             role="tab"
             aria-selected="false"
             data-screen-image="./assets/screens/companion-panel-reference.png"
+            data-screen-image-ru="./assets/screens/companion-panel-reference.png"
+            data-screen-image-en="./assets/screens/en-companion-panel.png"
             data-screen-alt="Подробная панель: маршрут, бонусы, таймер, напоминания и итоги забега"
             data-screen-title="Подробная панель"
             data-screen-text="Отдельное окно с маршрутом, бонусами, таймером, временем актов, напоминаниями и итогами забега — когда нужен весь контекст сразу."
@@ -284,6 +296,8 @@
             role="tab"
             aria-selected="false"
             data-screen-image="./assets/screens/timer-mode-reference.png"
+            data-screen-image-ru="./assets/screens/timer-mode-reference.png"
+            data-screen-image-en="./assets/screens/en-timer-mode.png"
             data-screen-alt="Режим только таймер: вид с таймером, уровнем и следующим переходом"
             data-screen-title="Режим “только таймер”"
             data-screen-text="Режим для тех, кто хочет держать на экране таймер, уровень и ближайший переход без подробной панели."
@@ -297,6 +311,8 @@
             role="tab"
             aria-selected="false"
             data-screen-image="./assets/screens/compact-mode-reference.png"
+            data-screen-image-ru="./assets/screens/compact-mode-reference.png"
+            data-screen-image-en="./assets/screens/en-compact-mode.png"
             data-screen-alt="Компактный режим: узкая панель с общим временем, актом, уровнем и рекомендацией"
             data-screen-title="Компактный режим"
             data-screen-text="Самый компактный вариант: узкая панель с ключевой информацией для тех, кому нужен минимум визуального шума."
@@ -320,6 +336,8 @@
                   id="screen-preview-image"
                   class="screen-preview-image"
                   src="./assets/screens/overlay-real-reference.png"
+                  data-image-ru="./assets/screens/overlay-real-reference.png"
+                  data-image-en="./assets/screens/en-overlay-main.png"
                   alt="Основной overlay: текущая зона, памятка Что в локации, следующий переход, скипы и статус уровня"
                   loading="lazy"
                 />
