@@ -51,7 +51,7 @@
     <g transform="translate(146 218)">
       <text x="0" y="0" fill="#D7A85A" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="900" letter-spacing="4">OPEN SOURCE</text>
       <text x="0" y="70" fill="#F2EAD9" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="62" font-weight="900" letter-spacing="-2">Код открыт</text>
-      <text x="0" y="112" fill="#B5BDC9" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">POE2 Campaign Codex Overlay</text>
+      <text x="0" y="112" fill="#B5BDC9" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">POE2 Act Companion Overlay</text>
       <text x="0" y="164" fill="#7AD690" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">✓ без чтения памяти</text>
       <text x="0" y="202" fill="#7AD690" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">✓ без инжекта</text>
       <text x="0" y="240" fill="#7AD690" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">✓ работает по логам игры</text>

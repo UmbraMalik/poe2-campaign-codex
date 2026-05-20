@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
-const RELEASES_REPO = process.env.RELEASES_REPO || 'UmbraMalik/poe2-campaign-codex-releases';
+const RELEASES_REPO = process.env.RELEASES_REPO || 'UmbraMalik/poe2-act-companion-overlay';
 const API_ROOT = 'https://api.github.com';
 const STATS_DIR = path.join(process.cwd(), 'stats');
 const PUBLIC_STATS_PATH = path.join(STATS_DIR, 'downloads.json');
@@ -12,7 +12,7 @@ const now = new Date().toISOString();
 const headers = {
   Accept: 'application/vnd.github+json',
   'X-GitHub-Api-Version': '2022-11-28',
-  'User-Agent': 'poe2-campaign-codex-download-stats',
+  'User-Agent': 'poe2-act-companion-overlay-download-stats',
 };
 
 if (process.env.GITHUB_TOKEN) {
@@ -30,7 +30,7 @@ function isInstallerAsset(asset) {
   return (
     name.endsWith('.exe') &&
     !name.endsWith('.blockmap') &&
-    (name.includes('setup') || name.includes('campaign-codex'))
+    (name.includes('setup') || name.includes('act-companion') || name.includes('act companion'))
   );
 }
 

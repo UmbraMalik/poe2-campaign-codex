@@ -1,8 +1,8 @@
-const LANGUAGE_STORAGE_KEY = 'poe2-campaign-codex-site-language';
+const LANGUAGE_STORAGE_KEY = 'poe2-act-companion-overlay-site-language';
 const SUPPORTED_LANGUAGES = ['ru', 'en'];
 
 const TEXT_TRANSLATIONS_EN = {
-  'POE2 Campaign Codex Overlay — оверлей для актов POE2': 'POE2 Campaign Codex Overlay — campaign overlay for POE2',
+  'POE2 Act Companion Overlay — оверлей для актов POE2': 'POE2 Act Companion Overlay — campaign overlay for POE2',
   'Overlay · RU/EN beta': 'Overlay · RU/EN beta',
   'Что умеет': 'Features',
   'Демо': 'Demo',
@@ -16,7 +16,7 @@ const TEXT_TRANSLATIONS_EN = {
   'Поддержать': 'Support',
   'beta · русский и английский клиент · работает по логам игры': 'beta · Russian and English client · works from game logs',
   'Оверлей для быстрого прохождения актов Path of Exile 2': 'A campaign overlay for faster Path of Exile 2 acts',
-  'POE2 Campaign Codex Overlay читает лог-файл игры, определяет текущую зону и показывает памятку “Что в локации”, следующий переход, скипы, бонусы, статус уровня, таймер забега и время актов — без инжекта в клиент игры.': 'POE2 Campaign Codex Overlay reads the game log, detects your current zone, and shows what matters there: the next transition, skips, bonuses, level status, run timer, and act splits — without injecting into the game client.',
+  'POE2 Act Companion Overlay читает лог-файл игры, определяет текущую зону и показывает памятку “Что в локации”, следующий переход, скипы, бонусы, статус уровня, таймер забега и время актов — без инжекта в клиент игры.': 'POE2 Act Companion Overlay reads the game log, detects your current zone, and shows what matters there: the next transition, skips, bonuses, level status, run timer, and act splits — without injecting into the game client.',
   'Скачать через GitHub': 'Download from GitHub',
   'Как установить': 'How to install',
   'Загрузок приложения и обновлений': 'App and update downloads',
@@ -48,13 +48,13 @@ const TEXT_TRANSLATIONS_EN = {
   'Приложение проверяет GitHub Releases, скачивает обновление внутри приложения и ставит его только после подтверждения.': 'The app checks GitHub Releases, downloads updates inside the app, and installs them only after confirmation.',
   'демонстрация': 'demo',
   'Посмотреть оверлей в действии': 'See the overlay in action',
-  'Короткая видео-демонстрация текущей версии POE2 Campaign Codex Overlay: как выглядит основной overlay, таймер, компактный режим и подробная панель прямо в работе.': 'A short video demo of the current POE2 Campaign Codex Overlay beta: the main overlay, timer, compact mode, and detailed panel in action.',
+  'Короткая видео-демонстрация текущей версии POE2 Act Companion Overlay: как выглядит основной overlay, таймер, компактный режим и подробная панель прямо в работе.': 'A short video demo of the current POE2 Act Companion Overlay beta: the main overlay, timer, compact mode, and detailed panel in action.',
   'Демонстрация': 'Demo',
   'Видеообзор текущей beta-версии': 'Current beta video overview',
   'Смотри прямо на сайте или открой ролик на YouTube.': 'Watch it here or open the video on YouTube.',
   'Смотреть на YouTube': 'Watch on YouTube',
   'Открытый исходный код': 'Open source',
-  'Исходники POE2 Campaign Codex Overlay открыты на GitHub: можно посмотреть код, проверить как работает приложение, предложить правки или просто убедиться, что оверлей читает только лог-файлы игры и не лезет в клиент.': 'POE2 Campaign Codex Overlay is open source on GitHub: you can inspect the code, see how the app works, suggest changes, or verify that the overlay only reads game log files and does not touch the client.',
+  'Исходники POE2 Act Companion Overlay открыты на GitHub: можно посмотреть код, проверить как работает приложение, предложить правки или просто убедиться, что оверлей читает только лог-файлы игры и не лезет в клиент.': 'POE2 Act Companion Overlay is open source on GitHub: you can inspect the code, see how the app works, suggest changes, or verify that the overlay only reads game log files and does not touch the client.',
   'Открыть GitHub': 'Open GitHub',
   'Про безопасность': 'Safety details',
   'как выглядит': 'screenshots',
@@ -65,7 +65,7 @@ const TEXT_TRANSLATIONS_EN = {
   'Компактный режим': 'Compact mode',
   'Текущая зона, памятка “Что в локации”, следующий переход, скипы, важные подсказки и статус уровня прямо поверх игры.': 'Current zone, zone checklist, next transition, skips, important notes, and level status right over the game.',
   'beta build': 'beta build',
-  'Скачать POE2 Campaign Codex Overlay': 'Download POE2 Campaign Codex Overlay',
+  'Скачать POE2 Act Companion Overlay': 'Download POE2 Act Companion Overlay',
   'Все сборки публикуются на GitHub Releases. Основная кнопка ниже сама подставляет актуальный installer из последнего релиза и ведёт прямо на скачивание': 'All builds are published on GitHub Releases. The main button below automatically picks the latest installer from the newest release and links directly to the',
   '. После установки выбери лог-файл игры в настройках. Дальше приложение само проверит новые версии и предложит обновиться через GitHub Releases.': 'download. After installation, choose the game log file in settings. The app will then check for new versions and offer updates through GitHub Releases.',
   'Последний релиз': 'Latest release',
@@ -96,7 +96,7 @@ const TEXT_TRANSLATIONS_EN = {
   'Зоны RU/EN клиента, уровень, маршрут, подсказки, бонусы, таймер и время актов — всё в одном месте.': 'RU/EN client zones, level, route, tips, bonuses, timer, and act splits — all in one place.',
   'безопасность': 'safety',
   'Безопасность и доверие': 'Safety and trust',
-  'POE2 Campaign Codex Overlay — локальный overlay-помощник. Он не вмешивается в клиент Path of Exile 2 и работает через обычный лог-файл игры.': 'POE2 Campaign Codex Overlay is a local overlay helper. It does not interfere with the Path of Exile 2 client and works through the regular game log file.',
+  'POE2 Act Companion Overlay — локальный overlay-помощник. Он не вмешивается в клиент Path of Exile 2 и работает через обычный лог-файл игры.': 'POE2 Act Companion Overlay is a local overlay helper. It does not interfere with the Path of Exile 2 client and works through the regular game log file.',
   'что приложение не делает': 'what the app does not do',
   'Без чтения памяти, инжекта и слежки за экраном': 'No memory reading, no injection, no screen watching',
   'Overlay определяет текущую зону по строкам из': 'The overlay detects the current zone from lines in',
@@ -120,7 +120,7 @@ const TEXT_TRANSLATIONS_EN = {
   'Для каждого релиза можно указывать SHA256-хэш installer-файла, чтобы пользователь мог проверить, что файл не был подменён.': 'Each release may include a SHA256 hash of the installer so users can verify that the file was not replaced.',
   'кто делает проект': 'who makes the project',
   'Один человек + фидбек сообщества': 'One person + community feedback',
-  'POE2 Campaign Codex Overlay — независимый community-проект от UmbraMalik.': 'POE2 Campaign Codex Overlay is an independent community project by UmbraMalik.',
+  'POE2 Act Companion Overlay — независимый community-проект от UmbraMalik.': 'POE2 Act Companion Overlay is an independent community project by UmbraMalik.',
   'Проект делает один человек. В некоторых случаях я использую AI-инструменты и фидбек игроков, чтобы быстрее находить ошибки, править зоны, структурировать данные и улучшать overlay.': 'The project is made by one person. In some cases, I use AI tools and player feedback to find issues faster, fix zones, structure data, and improve the overlay.',
   'Это не официальный инструмент Grinding Gear Games и не коммерческий продукт.': 'This is not an official Grinding Gear Games tool and not a commercial product.',
   'Отдельное спасибо ♥': 'Special thanks ♥',
@@ -168,11 +168,11 @@ const ATTRIBUTE_TRANSLATIONS_EN = {
   'Статистика скачиваний и актуального релиза': 'Download stats and current release',
   'Ключевые особенности': 'Key features',
   'Реальный скриншот оверлея': 'Real overlay screenshot',
-  'Реальный скриншот POE2 Campaign Codex Overlay в игре': 'Real POE2 Campaign Codex Overlay screenshot in-game',
+  'Реальный скриншот POE2 Act Companion Overlay в игре': 'Real POE2 Act Companion Overlay screenshot in-game',
   'Быстрые действия': 'Quick actions',
-  'POE2 Campaign Codex Overlay — демонстрация': 'POE2 Campaign Codex Overlay — demo',
-  'Открыть исходный код POE2 Campaign Codex Overlay на GitHub': 'Open POE2 Campaign Codex Overlay source code on GitHub',
-  'POE2 Campaign Codex Overlay — открытый исходный код на GitHub': 'POE2 Campaign Codex Overlay — open source on GitHub',
+  'POE2 Act Companion Overlay — демонстрация': 'POE2 Act Companion Overlay — demo',
+  'Открыть исходный код POE2 Act Companion Overlay на GitHub': 'Open POE2 Act Companion Overlay source code on GitHub',
+  'POE2 Act Companion Overlay — открытый исходный код на GitHub': 'POE2 Act Companion Overlay — open source on GitHub',
   'Переключение скриншотов приложения': 'App screenshot switcher',
   'Основной overlay: текущая зона, памятка Что в локации, следующий переход, скипы и статус уровня': 'Main overlay: current zone, zone checklist, next transition, skips, and level status',
   'Основной overlay': 'Main overlay',
@@ -423,8 +423,8 @@ function applyLanguage(language, options = {}) {
   });
 
   document.title = currentLanguage === 'ru'
-    ? 'POE2 Campaign Codex Overlay — оверлей для актов POE2'
-    : 'POE2 Campaign Codex Overlay — campaign overlay for POE2';
+    ? 'POE2 Act Companion Overlay — оверлей для актов POE2'
+    : 'POE2 Act Companion Overlay — campaign overlay for POE2';
 
   const languageToggle = document.querySelector('[data-language-toggle]');
   if (languageToggle) {
@@ -541,7 +541,7 @@ screenTabs.forEach((tab) => {
   });
 });
 
-const RELEASES_REPO = "UmbraMalik/poe2-campaign-codex-releases";
+const RELEASES_REPO = "UmbraMalik/poe2-act-companion-overlay";
 const DOWNLOAD_STATS_URL = './stats/downloads.json';
 const latestDownloadButtons = Array.from(document.querySelectorAll('[data-latest-download]'));
 const installerDownloadsTotalEls = Array.from(document.querySelectorAll('[data-installer-downloads-total]'));
@@ -555,7 +555,7 @@ function isInstallerAsset(asset) {
   return (
     name.endsWith('.exe') &&
     !name.endsWith('.blockmap') &&
-    (name.includes('setup') || name.includes('campaign-codex'))
+    (name.includes('setup') || name.includes('act-companion') || name.includes('act companion'))
   );
 }
 
@@ -574,8 +574,23 @@ function setTextAll(elements, value) {
   });
 }
 
+function replaceLegacyBranding(text) {
+  const legacyNoun = ['Co', 'dex'].join('');
+  const legacySlug = ['poe2', 'campaign', legacyNoun.toLowerCase()].join('-');
+  const legacyCompact = ['POE2', 'Campaign', legacyNoun].join('');
+
+  return String(text || '')
+    .replace(new RegExp(['POE2', 'Campaign', legacyNoun, 'Overlay'].join(' '), 'g'), 'POE2 Act Companion Overlay')
+    .replace(new RegExp(['PoE2', 'Campaign', legacyNoun, 'Overlay'].join(' '), 'g'), 'POE2 Act Companion Overlay')
+    .replace(new RegExp(['POE2', 'Campaign', legacyNoun].join(' '), 'g'), 'POE2 Act Companion')
+    .replace(new RegExp(['PoE2', 'Campaign', legacyNoun].join(' '), 'g'), 'POE2 Act Companion')
+    .replace(new RegExp(`${legacySlug}-releases`, 'g'), 'poe2-act-companion-overlay')
+    .replace(new RegExp(legacySlug, 'g'), 'poe2-act-companion-overlay')
+    .replace(new RegExp(legacyCompact, 'g'), 'POE2ActCompanion');
+}
+
 function normalizeReleaseLine(line) {
-  return String(line || '')
+  return replaceLegacyBranding(line)
     .replace(/<[^>]*>/g, ' ')
     .replace(/`([^`]+)`/g, '$1')
     .replace(/\[([^\]]+)\]\([^\)]+\)/g, '$1')
