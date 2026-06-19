@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "totalDownloads": 949,
+  "totalDownloads": 951,
   "latestVersion": "0.4.1",
-  "updatedAt": "2026-06-19T16:42:32.571Z",
+  "updatedAt": "2026-06-19T18:22:19.312Z",
   "source": "monotonic-github-releases-snapshot",
   "countsOnly": "installer .exe assets; latest.yml, .blockmap and source archives are excluded",
-  "currentInstallerDownloads": 386,
-  "githubCurrentInstallerDownloads": 800,
+  "currentInstallerDownloads": 388,
+  "githubCurrentInstallerDownloads": 802,
   "manualAdjustmentDownloads": 149,
   "installerDownloadsByVersion": {
     "0.1.0": 1,
@@ -41,7 +41,7 @@
     "0.3.4": 3,
     "0.3.5": 46,
     "0.4.0": 136,
-    "0.4.1": 386
+    "0.4.1": 388
   },
   "trackedInstallerAssets": 33,
   "visibleInstallerAssets": 33,
