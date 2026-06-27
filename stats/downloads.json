@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "totalDownloads": 982,
   "latestVersion": "0.4.2",
-  "updatedAt": "2026-06-27T15:03:57.308Z",
+  "updatedAt": "2026-06-27T16:17:41.919Z",
   "source": "monotonic-github-releases-snapshot",
   "countsOnly": "installer .exe assets; latest.yml, .blockmap and source archives are excluded",
   "currentInstallerDownloads": 22,
